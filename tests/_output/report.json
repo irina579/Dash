@@ -1,0 +1,184 @@
+[
+    {
+        "event": "suiteStart",
+        "suite": "acceptance",
+        "tests": 3
+    },
+    {
+        "event": "testStart",
+        "suite": "acceptance",
+        "test": [
+            "",
+            "dashLoginUserCest: Login to dash"
+        ]
+    },
+    {
+        "event": "test",
+        "suite": "acceptance",
+        "test": [
+            "",
+            "dashLoginUserCest: Login to dash"
+        ],
+        "status": "pass",
+        "time": 14.6622225,
+        "trace": [],
+        "message": "",
+        "output": ""
+    },
+    {
+        "event": "testStart",
+        "suite": "acceptance",
+        "test": [
+            "",
+            "dashCreateUserCest: Create user"
+        ]
+    },
+    {
+        "event": "test",
+        "suite": "acceptance",
+        "test": [
+            "",
+            "dashCreateUserCest: Create user"
+        ],
+        "status": "fail",
+        "time": 3.248834,
+        "trace": [
+            {
+                "function": "click",
+                "class": "Codeception\\Module\\WebDriver",
+                "type": "->",
+                "args": [
+                    "\/\/div[contains(text(),\"Users\")]"
+                ]
+            },
+            {
+                "file": "E:\\Automation\\Dash\\tests\\_support\\_generated\\AcceptanceTesterActions.php",
+                "line": 759,
+                "function": "runStep",
+                "class": "Codeception\\Scenario",
+                "type": "->",
+                "args": [
+                    {
+                        "executed": true
+                    }
+                ]
+            },
+            {
+                "file": "E:\\Automation\\Dash\\tests\\_support\\BaseActions.php",
+                "line": 26,
+                "function": "click",
+                "class": "AcceptanceTester",
+                "type": "->",
+                "args": [
+                    "\/\/div[contains(text(),\"Users\")]"
+                ]
+            },
+            {
+                "file": "E:\\Automation\\Dash\\tests\\acceptance\\2dashCreateUserCest.php",
+                "line": 34,
+                "function": "openUsersPage",
+                "class": "BaseActions",
+                "type": "->",
+                "args": [
+                    {}
+                ]
+            },
+            {
+                "function": "createUser",
+                "class": "dashCreateUserCest",
+                "type": "->",
+                "args": [
+                    {}
+                ]
+            },
+            {
+                "file": "E:\\Automation\\Dash\\vendor\\bin\\codecept",
+                "line": 117,
+                "args": [
+                    "E:\\Automation\\Dash\\vendor\\codeception\\codeception\\codecept"
+                ],
+                "function": "include"
+            }
+        ],
+        "message": "CSS or XPath element with '\/\/div[contains(text(),\"Users\")]' was not found.\n",
+        "output": ""
+    },
+    {
+        "event": "testStart",
+        "suite": "acceptance",
+        "test": [
+            "",
+            "dashSearchUserCest: Search for created user"
+        ]
+    },
+    {
+        "event": "test",
+        "suite": "acceptance",
+        "test": [
+            "",
+            "dashSearchUserCest: Search for created user"
+        ],
+        "status": "fail",
+        "time": 0.0082964,
+        "trace": [
+            {
+                "function": "click",
+                "class": "Codeception\\Module\\WebDriver",
+                "type": "->",
+                "args": [
+                    "\/\/div[contains(text(),\"Users\")]"
+                ]
+            },
+            {
+                "file": "E:\\Automation\\Dash\\tests\\_support\\_generated\\AcceptanceTesterActions.php",
+                "line": 759,
+                "function": "runStep",
+                "class": "Codeception\\Scenario",
+                "type": "->",
+                "args": [
+                    {
+                        "executed": true
+                    }
+                ]
+            },
+            {
+                "file": "E:\\Automation\\Dash\\tests\\_support\\BaseActions.php",
+                "line": 26,
+                "function": "click",
+                "class": "AcceptanceTester",
+                "type": "->",
+                "args": [
+                    "\/\/div[contains(text(),\"Users\")]"
+                ]
+            },
+            {
+                "file": "E:\\Automation\\Dash\\tests\\acceptance\\3dashSearchUserCest.php",
+                "line": 36,
+                "function": "openUsersPage",
+                "class": "BaseActions",
+                "type": "->",
+                "args": [
+                    {}
+                ]
+            },
+            {
+                "function": "searchForCreatedUser",
+                "class": "dashSearchUserCest",
+                "type": "->",
+                "args": [
+                    {}
+                ]
+            },
+            {
+                "file": "E:\\Automation\\Dash\\vendor\\bin\\codecept",
+                "line": 117,
+                "args": [
+                    "E:\\Automation\\Dash\\vendor\\codeception\\codeception\\codecept"
+                ],
+                "function": "include"
+            }
+        ],
+        "message": "CSS or XPath element with '\/\/div[contains(text(),\"Users\")]' was not found.\n",
+        "output": ""
+    }
+]

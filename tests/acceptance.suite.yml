@@ -1,0 +1,13 @@
+actor: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver:
+              url: 'http://10.94.6.100:50000'
+              browser: chrome
+              port: 9515
+              window_size: 1920x1080
+              clear_cookies: false
+        - \Helper\Acceptance
+step_decorators:
+  - \Codeception\Step\TryTo
+  - \Codeception\Step\ConditionalAssertion
