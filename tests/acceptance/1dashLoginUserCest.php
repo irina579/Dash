@@ -76,7 +76,11 @@ class dashLoginUserCest extends BaseActions
         $I->fillField('//span[contains(text(),"Global")]/following::input[1]', $this->globalID);
         $I->wait(3);
 
-        if ($I->dontSeePageHasElement("//li[@class='VTab__btn VTab__btn_MPCFilm VTab__btn_active']")) {
+        /*if ($I->dontSeePageHasElement("//li[@class='VTab__btn VTab__btn_MPCFilm VTab__btn_active']")) {
+            $I->click("//li[@class='VTab__btn VTab__btn_MPCFilm VTab__btn_next']");
+        }*/
+
+        if ($I->tryToSeeElement("//li[@class='VTab__btn VTab__btn_MPCFilm VTab__btn_next']")) {
             $I->click("//li[@class='VTab__btn VTab__btn_MPCFilm VTab__btn_next']");
         }
 
@@ -113,13 +117,11 @@ class dashLoginUserCest extends BaseActions
         }
 
         $I->seeElement("//div[contains(text(), 'User Info')]");
-       // $I->see($this->userNameNewUser);
-        // $I->see($this->emailNewUser);
-
-        if ($I->dontSeePageHasElement("//li[@class='VTab__btn VTab__btn_MPCFilm VTab__btn_active']")) {
-            $I->click("//li[@class='VTab__btn VTab__btn_MPCFilm VTab__btn_next']");
-        }
-        $I->seeCheckboxIsChecked("//label[contains(text(), 'Select all')]");
+        $I->seeInField('//span[contains(text(),"Username")]/following::input[1]', $this->userNameNewUser);
+        $I->seeInField('//span[contains(text(),"Email Address")]/following::input[1]', $this->emailNewUser);
+        $I->seeInField('//span[contains(text(),"First Name")]/following::input[1]', $this->firstNameNewUser);
+        $I->seeInField('//span[contains(text(),"Last Name")]/following::input[1]', $this->lastNameNewUser);
+        $I->seeInField('//span[contains(text(),"Global")]/following::input[1]', (string)$this->globalID);
     }
 
     /**
