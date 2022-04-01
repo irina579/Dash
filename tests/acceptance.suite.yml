@@ -8,6 +8,7 @@ modules:
               window_size: 1920x1080
               clear_cookies: false
         - \Helper\Acceptance
+        - Asserts
 step_decorators:
   - \Codeception\Step\TryTo
   - \Codeception\Step\ConditionalAssertion

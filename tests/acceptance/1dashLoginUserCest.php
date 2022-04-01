@@ -116,12 +116,17 @@ class dashLoginUserCest extends BaseActions
             $I->wait(5);
         }
 
-        $I->seeElement("//div[contains(text(), 'User Info')]");
-        $I->seeInField('//span[contains(text(),"Username")]/following::input[1]', $this->userNameNewUser);
+        $I->see('User Info');
+
+        $userNameValue = $I->grabValueFrom('//span[contains(text(),"Username")]/following::input[1]');
+        $I->assertEquals($userNameValue, $this->userNameNewUser);
+
         $I->seeInField('//span[contains(text(),"Email Address")]/following::input[1]', $this->emailNewUser);
         $I->seeInField('//span[contains(text(),"First Name")]/following::input[1]', $this->firstNameNewUser);
         $I->seeInField('//span[contains(text(),"Last Name")]/following::input[1]', $this->lastNameNewUser);
         $I->seeInField('//span[contains(text(),"Global")]/following::input[1]', (string)$this->globalID);
+
+
     }
 
     /**

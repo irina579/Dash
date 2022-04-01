@@ -15,6 +15,7 @@
  * @method void pause()
  * @method getModule(string $string)
  * @method tryToSeeElement(selector $selector)
+ * @method assertEquals()
  *
  * @SuppressWarnings(PHPMD)
  */
