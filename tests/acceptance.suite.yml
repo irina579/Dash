@@ -2,7 +2,7 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-              url: 'http://10.94.6.100:50000'
+              url: 'http://10.94.6.100:60000'
               browser: chrome
               port: 9515
               window_size: 1920x1080

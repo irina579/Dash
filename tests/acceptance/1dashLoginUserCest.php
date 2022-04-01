@@ -86,10 +86,10 @@ class dashLoginUserCest extends BaseActions
 
         $arrayDepartments = $I->grabMultiple("//label[contains(text(), 'Select all')]");
         $sumDepartments = count($arrayDepartments);
-
         for($x=1; $x<=$sumDepartments; $x++) {
             $I->click("(//label[contains(text(), 'Select all')])["."$x"."]");
         }
+
 
         $arrayPermissions = $I->grabMultiple("//div[@class='ui-checkbox table-row-group__btns__checkbox ui-checkbox_default']");
         $sumPermission = count($arrayPermissions);
@@ -126,7 +126,13 @@ class dashLoginUserCest extends BaseActions
         $I->seeInField('//span[contains(text(),"Last Name")]/following::input[1]', $this->lastNameNewUser);
         $I->seeInField('//span[contains(text(),"Global")]/following::input[1]', (string)$this->globalID);
 
+        for($x=1; $x<=$sumDepartments; $x++) {
+            $I->seeCheckboxIsChecked("(//div[contains(@class,'ui-checkbox table-content__column__item__select-all ui-checkbox_default')]/input)[".$x."]");
+        }
 
+        for($d=1; $d<=$sumPermission; $d++) {
+            $I->seeCheckboxIsChecked("(//div[contains(@class,'ui-checkbox table-row-group__btns__checkbox ui-checkbox_default')]/input)[" . $d . "]");
+        }
     }
 
     /**

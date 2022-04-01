@@ -19,7 +19,7 @@ class BaseActions{
         $I->wait(5);
         $I->waitForElementVisible('//div[contains(text(), "Welcome back")]', 30);
         $I->wait(3);
-        $I->click('//span[@class="header-banner__close-button"]');
+        $I->click("//span[@class='header-banner__close-button']");
     }
 
     protected function openUsersPage(AcceptanceTester $I){
