@@ -10,14 +10,9 @@ class Acceptance extends \Codeception\Module
     /**
      * @throws \Codeception\Exception\ModuleException
      */
-    function dontSeePageHasElement($element): bool
+    function dontSeePageHasElement($element)
     {
-        try {
             $this->getModule('WebDriver')->_findElements($element);
-        } catch (\PHPUnit_Framework_AssertionFailedError $f) {
-            return false;
-        }
-        return true;
     }
 
 }
