@@ -4,8 +4,8 @@ use Codeception\Util\Locator;
 use Helper\Acceptance;
 class dashSearchUserCest extends BaseActions
 {
-    protected string $userNameNewUser = 'KateTester5';
-    protected string $emailNewUser = 'dashUser5@yopmail.com';
+    protected string $userNameNewUser = 'TesterTest1';
+    protected string $emailNewUser = 'Tester1@yopmail.com';
     protected string $firstNameNewUser = 'FirstNameTester';
     protected string $lastNameNewUser = 'LastNameTester';
     protected int $globalID = 115;
@@ -38,8 +38,9 @@ class dashSearchUserCest extends BaseActions
     public function searchForCreatedUser(AcceptanceTester $I){
 
         $this->openUsersPage($I);
-        if ($I->dontSeePageHasElement("//li[@class='VTab__btn VTab__btn_search VTab__btn_active VTab__btn_next']")) {
-            $I->click("//li[@class='VTab__btn VTab__btn_search VTab__btn_next']");
+
+        if ($I->tryToSeeElement("//li[contains(@class, 'VTab__btn_filter VTab__btn_active')]")){
+            $I->click("//li[contains(@class, 'VTab__btn_search')]");
         }
 
         $I->fillField("//input[@class='search__input']", $this->userNameNewUser);
