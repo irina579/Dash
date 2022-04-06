@@ -119,6 +119,10 @@ class createUserWithVariablesCest extends BaseActions
         $I->seeInField('//span[contains(text(),"Last Name")]/following::input[1]', $this->lastNameNewUser);
         $I->seeInField('//span[contains(text(),"Global")]/following::input[1]', (string)$this->globalID);
 
+        if ($I->tryToSeeElement("//li[@class='VTab__btn VTab__btn_MPCFilm VTab__btn_next']")) {
+            $I->click("//li[@class='VTab__btn VTab__btn_MPCFilm VTab__btn_next']");
+        }
+
         for($x=1; $x<=$sumDepartments; $x++) {
             $I->seeCheckboxIsChecked("(//div[contains(@class,'ui-checkbox table-content__column__item__select-all ui-checkbox_default')]/input)[".$x."]");
         }
