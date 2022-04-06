@@ -23,7 +23,8 @@ class BaseActions{
     }
 
     protected function openUsersPage(AcceptanceTester $I){
-        $I->click('//div[contains(text(),"Users")]');
+
+        $I->clickWithLeftButton('//div[contains(text(),"Users")]');
         $I->wait(3);
     }
 }
